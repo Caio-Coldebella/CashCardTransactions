@@ -1,0 +1,14 @@
+services:
+  authorization-server:
+    image: 'ghcr.io/vmware-tanzu-learning/course-secure-rest-api-oauth2-code/sso:latest'
+    ports:
+      - "9000:9000"
+
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=cashcard'
+      - 'POSTGRES_PASSWORD=cashcard'
+      - 'POSTGRES_USER=cashcard'
+    ports:
+      - '5432:5432'
